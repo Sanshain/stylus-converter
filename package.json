@@ -9,7 +9,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c && node ./test/converter-test.js",
-    "test": "npm run build && mocha ./test/index.spec.js"
+    "test": "npm run build && mocha ./test/index.spec.js",
+    "convert": "node bin/conver.js -i \"./test/stylus/boolean.styl\" -o ./test.scss"
   },
   "repository": {
     "type": "git",

@@ -35,7 +35,7 @@ function replaceCrypto(options = {}) {
 }
 
 
-export default {
+const buildConfig = {
   input: './src/index.js',
   output: [
     {
@@ -43,6 +43,7 @@ export default {
       format: 'cjs'
     },
     {
+      // file: './lib/stylus_compiler_index.js',
       file: './lib/stylus_compiler_index.js',
       format: 'iife',
       name: "stylusCompiler",
@@ -65,3 +66,18 @@ export default {
     // uglify()
   ]
 }
+
+export default [
+  buildConfig,
+  // {
+  //   ...buildConfig,
+  //   input: './bin/convertStylus.js',
+  //   output: {
+  //     // file: './lib/stylus_compiler_index.js',
+  //     file: './lib/stylus_compiler_index.js',
+  //     format: 'iife',
+  //     name: "stylusCompiler",
+  //     sourcemap: true,
+  //   }
+  // }
+];

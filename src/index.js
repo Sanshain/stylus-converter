@@ -21,6 +21,7 @@ export function converter(result, options = {
   conver: 'sass',
   autoprefixer: true
 }, globalVariableList = [], globalMixinList = []) {
+  console.log(options);
   if (options.isSignComment) result = result.replace(/\/\/\s(.*)/g, '/* !#sign#! $1 */')
 
   // Add semicolons to properties with inline comments to ensure that they are parsed correctly
