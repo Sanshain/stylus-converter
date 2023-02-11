@@ -676,13 +676,6 @@ function visitMember({ left, right }) {
   return `${visitNode(left)}.${visitNode(right)}`
 }
 
-function visitAtrule(node) {
-  let before = handleLinenoAndIndentation(node)
-  oldLineno = node.lineno
-  before += '@' + node.type
-  return before + visitBlock(node.block)
-}
-
 function visitObject({ vals, lineno }) {
   isObject = true
   indentationLevel++
@@ -720,6 +713,13 @@ function visitNamespace({ val, lineno }) {
   }
   return before + name + visitNode(val)
 }
+
+// function visitAtrule(node) {
+//   let before = handleLinenoAndIndentation(node)
+//   oldLineno = node.lineno
+//   before += '@' + node.type
+//   return before + visitBlock(node.block)
+// }
 
 function visitAtrule({ type, block, lineno, segments }) {
   const before = handleLineno(lineno)

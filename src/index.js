@@ -1,6 +1,8 @@
+//_@ts-check
 import Parser from 'stylus/lib/parser.js'
 import visitor from './visitor/index.js'
 import { _get as get, nodesToJSON } from './util.js'
+
 
 export function parse(result) {
   return new Parser(result).parse()
